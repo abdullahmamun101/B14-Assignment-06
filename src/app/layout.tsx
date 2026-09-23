@@ -4,14 +4,13 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 
 const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   variable: "--font-oswald",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "FitLog — Workout Library",
-  description: "Browse gym workouts, build today's plan, and track weekly calories with FitLog.",
+  title: "FitLog",
+  description: "Workout Library",
 };
 
 export default function RootLayout({
@@ -21,10 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${oswald.variable} bg-[#0d0d0d]`}>
+      <body className={oswald.variable}>
         <Navbar />
         {children}
       </body>
     </html>
   );
-}
+} 

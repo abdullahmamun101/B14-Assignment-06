@@ -6,7 +6,7 @@ import { Clock, Flame, Star } from "lucide-react";
 export default function WorkoutCard({ workout }: { workout: Workout }) {
   return (
     <Link
-      href={`/exercise/${workout.id}`}
+      href={`/workout/${workout.id}`}
       className="bg-[#1a1d23] border border-white/10 rounded-xl overflow-hidden hover:border-[#ccff00]/50 transition block"
     >
       {/* Image */}
@@ -25,7 +25,7 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
           {workout.muscleGroups.map((tag) => (
             <span
               key={tag}
-              className="bg-[#ccff00]/10 text-[#ccff00] text-[10px] font-semibold uppercase px-2 py-1 rounded"
+              className="rounded-full bg-[#ccff00] px-3 py-1 text-[11px] font-bold text-black"
             >
               {tag}
             </span>
@@ -40,7 +40,7 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
         {/* Equipment */}
         <p className="text-gray-400 text-xs mb-4">{workout.equipment}</p>
 
-        {/* Stats row */}
+        {/* Stats */}
         <div className="flex items-center gap-4 text-gray-300 text-xs font-medium">
           <span className="inline-flex items-center gap-1.5">
             <Clock className="w-4 h-4 text-[#ccff00]" />

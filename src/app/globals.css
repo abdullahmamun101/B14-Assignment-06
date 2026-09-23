@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
-/* @theme {
-  --font-display: var(--font-oswald);
-} */
 
 body {
   background-color: #0f1115;
+}
+
+.font-display {
+  font-family: var(--font-oswald), sans-serif;
 }
