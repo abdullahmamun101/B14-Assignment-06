@@ -23,7 +23,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="w-full md:w-[420px] flex justify-center">
+        <div className="w-full `md:w-[420px]` flex justify-center">
           <Image
             src="/banner.png"
             alt="Gym Illustration"

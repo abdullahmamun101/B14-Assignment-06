@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-@theme {
+/* @theme {
   --font-display: var(--font-oswald);
-}
+} */
 
 body {
   background-color: #0f1115;
