@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   CalendarPlus,
   Bookmark,
 } from "lucide-react";
+import Footer from "@/app/components/Footer";
 
 interface Workout {
   id: number;
@@ -50,27 +50,27 @@ export default async function WorkoutDetails({
 
       <section className="mx-auto max-w-245 px-5 py-8 md:px-0 md:py-7">
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-[466px_1fr] md:gap-8">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[600px_1fr] md:gap-12">
 
           {/* LEFT - IMAGE */}
-            <div className="relative w-full overflow-hidden rounded-xl bg-[#f1f1f1] `aspect-[4/5]` md:aspect-auto md:h-170">
-              <Image
-                src={workout.image}
-                alt={`${workout.name} demonstration`}
-                fill
-                priority
-                className="object-cover"
-              />
+          <div className="relative w-full overflow-hidden rounded-xl bg-[#f1f1f1] `aspect-[4/5]` md:aspect-auto md:h-190">
+            <Image
+              src={workout.image}
+              alt={`${workout.name} demonstration`}
+              fill
+              priority
+              className="object-cover"
+            />
           </div>
 
           {/* RIGHT - CONTENT */}
           <div className="flex flex-col justify-start pt-1">
 
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-white md:text-[38px]">
+            <h1 className="font-display text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-white md:text-[48px]">
               {workout.name}
             </h1>
 
-            <p className="mt-4 max-w-125 text-[14px] leading-[1.55] text-[#b7b9bf]">
+            <p className="mt-5 max-w-150 text-base leading-[1.6] text-[#b7b9bf]">
               {workout.description}
             </p>
 
@@ -138,7 +138,7 @@ export default async function WorkoutDetails({
                 {workout.instructions.map((instruction, index) => (
                   <li
                     key={index}
-                    className="flex gap-3 text-[13px] leading-normal text-[#e0e1e4]"
+                    className="flex gap-4 text-[15px] leading-[1.6] text-[#e0e1e4]"
                   >
                     <span className="shrink-0 font-bold text-white">
                       {index + 1}.
@@ -178,31 +178,7 @@ export default async function WorkoutDetails({
 
       </section>
 
-      {/* FOOTER */}
-      <footer className="border-t border-[#25282e] bg-[#191c22]">
-
-        <div className="mx-auto flex max-w-245 flex-col items-center justify-between gap-4 px-5 py-7 sm:flex-row md:px-0">
-
-          <Link
-            href="/"
-            className="flex items-center gap-2"
-          >
-            <span className="text-xl text-[#ccff00]">
-              ⛓
-            </span>
-
-            <span className="font-display text-sm font-bold text-white">
-              FITLOG
-            </span>
-          </Link>
-
-          <p className="text-center text-[10px] text-[#85878d] sm:text-right">
-            © 2026 FitLog — Workout Library. Train hard, log honest.
-          </p>
-
-        </div>
-
-      </footer>
+      <Footer />
 
     </main>
   );
