@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import { Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-oswald",
+});
 
 export const metadata: Metadata = {
   title: "FitLog — Workout Library",
@@ -14,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#0d0d0d]">
+      <body className={`${oswald.variable} bg-[#0d0d0d]`}>
         <Navbar />
         {children}
       </body>

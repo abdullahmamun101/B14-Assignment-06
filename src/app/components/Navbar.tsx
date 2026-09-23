@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-[#0d0d0d] border-b border-white/10 relative">
+    <nav className="w-full bg-[#0f1115] border-b border-white/10 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         
         {/* Left side: hamburger */}
