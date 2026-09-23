@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { PlanProvider } from "@/context/PlanContext";
+import { Toaster } from "react-hot-toast";
+import Footer from "./components/Footer";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -20,10 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={oswald.variable}>
-         <Navbar />
-        {children}
+      <body className={`${oswald.variable} flex min-h-screen flex-col`}>
+        <PlanProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </PlanProvider>
+        <Toaster position="bottom-center" />
       </body>
     </html>
   );
-} 
+}

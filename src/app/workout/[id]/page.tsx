@@ -1,25 +1,8 @@
 import Image from "next/image";
 import {
-  CalendarPlus,
-  Bookmark,
 } from "lucide-react";
-import Footer from "@/app/components/Footer";
-
-interface Workout {
-  id: number;
-  name: string;
-  image: string;
-  muscleGroups: string[];
-  equipment: string;
-  difficulty: string;
-  duration: number;
-  caloriesBurned: number;
-  sets: number;
-  reps: string;
-  rating: number;
-  description: string;
-  instructions: string[];
-}
+import WorkoutActions from "@/app/components/WorkoutActions";
+import { Workout } from "@/types/workout";
 
 async function getWorkout(id: string): Promise<Workout> {
   const response = await fetch(
@@ -153,32 +136,12 @@ export default async function WorkoutDetails({
             </div>
 
             {/* ACTION BUTTONS */}
-            <div className="mt-6 flex flex-wrap gap-2">
-
-              <button
-                type="button"
-                className="inline-flex h-9 items-center gap-2 rounded-full bg-[#ccff00] px-4 text-[11px] font-bold text-black transition hover:bg-[#b9eb00]"
-              >
-                <CalendarPlus className="h-4 w-4" />
-                Add to today&apos;s plan
-              </button>
-
-              <button
-                type="button"
-                className="inline-flex h-9 items-center gap-2 rounded-full border border-[#85878d] px-4 text-[11px] font-bold text-white transition hover:border-[#ccff00] hover:text-[#ccff00]"
-              >
-                <Bookmark className="h-4 w-4" />
-                Save for later
-              </button>
-
-            </div>
+            <WorkoutActions workout={workout} />
 
           </div>
         </div>
 
       </section>
-
-      <Footer />
 
     </main>
   );
