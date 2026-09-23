@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Workout } from "../types/workout";
+import { Workout } from "../../types/workout";
 import { Clock, Flame, Star } from "lucide-react";
 
 export default function WorkoutCard({ workout }: { workout: Workout }) {
   return (
     <Link
       href={`/exercise/${workout.id}`}
-      className="bg-[#151515] border border-white/10 rounded-xl overflow-hidden hover:border-[#ccff00]/50 transition block"
+      className="bg-[#1a1d23] border border-white/10 rounded-xl overflow-hidden hover:border-[#ccff00]/50 transition block"
     >
       {/* Image */}
       <div className="relative w-full h-48">
@@ -42,19 +42,22 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
 
         {/* Stats row */}
         <div className="flex items-center gap-4 text-gray-300 text-xs font-medium">
-        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-flex items-center gap-1.5">
             <Clock className="w-4 h-4 text-[#ccff00]" />
             {workout.duration} min
-        </span>
-        <span className="inline-flex items-center gap-1.5">
+          </span>
+
+          <span className="inline-flex items-center gap-1.5">
             <Flame className="w-4 h-4 text-[#ccff00]" />
             {workout.caloriesBurned} kcal
-        </span>
-        <span className="inline-flex items-center gap-1.5">
+          </span>
+
+          <span className="inline-flex items-center gap-1.5">
             <Star className="w-4 h-4 text-[#ccff00]" />
             {workout.rating}
-        </span>
-</div>
+          </span>
+        </div>
+      </div>
     </Link>
   );
 }
